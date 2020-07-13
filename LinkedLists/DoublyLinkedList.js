@@ -44,8 +44,9 @@ class DoublyLinkedList {
       newNode.prev = leader;
       newNode.next = follower;
       follower.prev = newNode;
+      this.length++;
     }
-    this.length++;
+
     return this;
   }
 
