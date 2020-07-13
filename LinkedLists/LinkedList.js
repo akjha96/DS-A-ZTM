@@ -62,11 +62,9 @@ class LinkedList {
   // Create a func that takes 2 arguments: position and value and inserts into the linkedlist
   insert(pos, value) {
     if (pos >= this.length) {
-      return this.append(value);
-      this.length++;
+      this.append(value);
     } else if (pos === 0) {
       this.prepend(value);
-      this.length++;
     } else {
       const leader = this.traverseToIndex(pos - 1);
       const holdingPointer = leader.next;
@@ -75,6 +73,7 @@ class LinkedList {
       newNode.next = holdingPointer;
       this.length++;
     }
+    return this;
   }
   // traverse function that takes an index and return the corresponding Node
   traverseToIndex(index) {
